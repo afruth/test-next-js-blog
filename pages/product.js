@@ -11,10 +11,8 @@ const ProductPage = ({product}) => {
 }
 
 ProductPage.getInitialProps = async({query}) => {
-  console.log(query)
   const res = await fetch('https://app.scrap24.com/api/v1/products/' + query.productId);
   const json = await res.json();
-  console.log(json)
   return {product: json[0]};
 }
 

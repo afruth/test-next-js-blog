@@ -18,7 +18,7 @@ generator = () => {
   })
   .then(function(json) {
     json.forEach(p => {
-      pages[p.slug] ={
+      pages[`/product/${p.slug}`] = {
         page: '/product',
         query: {
           productId: p.id
