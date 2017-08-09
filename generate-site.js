@@ -1,6 +1,6 @@
 require('isomorphic-fetch');
 
-generator = async () => {
+generator = () => {
   const pages = {}
   //generating home page
   pages['/'] = {
@@ -12,17 +12,19 @@ generator = async () => {
   }
 
   //generating individual product page
-  const res = await fetch('https://app.scrap24.com/api/v1/products');
-  const json = await res.json();
-
-  json.forEach(p => {
-    pages[p.slug] ={
-      page: '/product',
-      query: {
-        productId: p.id
+  return json = fetch('https://app.scrap24.com/api/v1/products')
+  .then (function(res) {
+    return res.json();
+  })
+  .then(function(json) {
+    json.forEach(p => {
+      pages[p.slug] ={
+        page: '/product',
+        query: {
+          productId: p.id
+        }
       }
-    }
+    });
+    return pages
   });
-
-  return pages
 }
