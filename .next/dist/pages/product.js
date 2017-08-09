@@ -40,22 +40,19 @@ ProductPage.getInitialProps = function () {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
-            console.log(query);
-            _context.next = 3;
+            _context.next = 2;
             return fetch('https://app.scrap24.com/api/v1/products/' + query.productId);
 
-          case 3:
+          case 2:
             res = _context.sent;
-            _context.next = 6;
+            _context.next = 5;
             return res.json();
 
-          case 6:
+          case 5:
             json = _context.sent;
-
-            console.log(json);
             return _context.abrupt('return', { product: json[0] });
 
-          case 9:
+          case 7:
           case 'end':
             return _context.stop();
         }

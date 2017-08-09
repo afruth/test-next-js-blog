@@ -30,7 +30,7 @@ var ProductsPage = function ProductsPage(_ref) {
   var products = _ref.products;
 
   return _react2.default.createElement('div', null, products.map(function (p) {
-    return _react2.default.createElement('div', { key: p.id }, _react2.default.createElement(_link2.default, { href: { pathname: '/product/' + p.slug } }, p.name));
+    return _react2.default.createElement('div', { key: p.id }, _react2.default.createElement(_link2.default, { href: '/product/' + p.slug }, p.name));
   }));
 };
 
