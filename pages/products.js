@@ -4,7 +4,7 @@ import 'isomorphic-fetch';
 
 const ProductsPage = ({products}) => {
   return (<div>
-    {products.map(p => <div key={p.id}><a href={`/product/${p.slug}`}>{p.name}</a></div>)}
+    {products.map(p => <div key={p.id}><Link href={`/product?productId=${p.id}`} as={`/product/${p.slug}`}>{p.name}</Link></div>)}
   </div>)
 }
 
